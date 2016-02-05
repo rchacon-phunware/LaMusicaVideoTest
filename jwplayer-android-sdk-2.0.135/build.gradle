@@ -1,0 +1,2 @@
+configurations.create("default")
+artifacts.add("default", file('jwplayer-android-sdk-2.0.135.aar'))
