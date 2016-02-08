@@ -1,6 +1,18 @@
 apply plugin: 'com.android.application'
 apply plugin: 'brandme'
 
+buildscript {
+    repositories {
+        jcenter()
+        maven { url 'https://raw.github.com/phunware/brandme-gradle-repo/master' }
+    }
+
+    dependencies {
+        //Required to be loaded first for brandme plugin to change behavior based on Gradle version.
+        classpath 'com.phunware.brandme.gradle:brandme-gradle-jenkins:0.0.+'
+    }
+}
+
 android {
     compileSdkVersion 23
     buildToolsVersion "23.0.2"
