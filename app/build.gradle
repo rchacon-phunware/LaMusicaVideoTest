@@ -1,4 +1,5 @@
 apply plugin: 'com.android.application'
+apply plugin: 'brandme'
 
 android {
     compileSdkVersion 23
