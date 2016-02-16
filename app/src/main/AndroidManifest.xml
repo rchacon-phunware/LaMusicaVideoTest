@@ -23,7 +23,7 @@
 
         <meta-data
             android:name="JW_LICENSE_KEY"
-            android:value="qAEOuqc+B0rUU+hBbh0z2vRypx90JYqty17KULtVp9RMzcgDfsFp6nRbCjA=" />
+            android:value="0nWKw1SYKf7V5N1DzHoK+CjeuggrkOywuyKbRzPzsGKwA8ZY0rqMXVbZQjA=" />
 
         <activity
             android:name=".TabActivity"
