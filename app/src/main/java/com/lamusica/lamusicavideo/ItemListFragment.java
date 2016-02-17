@@ -86,7 +86,7 @@ public class ItemListFragment extends ListFragment {
             case JW_PLAYER:
                 mpdIntent = new Intent(this.getContext(), JWActivity.class)
                         .setData(Uri.parse(url));
-                mpdIntent.putExtra("AD",position == 8);
+                mpdIntent.putExtra("AD",position == 11);
                 break;
         }
 
