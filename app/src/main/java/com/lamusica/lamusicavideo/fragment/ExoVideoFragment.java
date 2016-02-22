@@ -198,10 +198,20 @@ public class ExoVideoFragment extends Fragment implements SurfaceHolder.Callback
         super.onResume();
         configureSubtitleView();
         if (player == null) {
-            preparePlayer(true);
+            preparePlayer(isVisible());
         } else {
             player.setBackgrounded(false);
         }
+    }
+
+    @Override
+    public void setUserVisibleHint(boolean isVisibleToUser) {
+
+        if (!isVisibleToUser && player != null) {
+            player.pause();
+        }
+
+        super.setUserVisibleHint(isVisibleToUser);
     }
 
     @Override

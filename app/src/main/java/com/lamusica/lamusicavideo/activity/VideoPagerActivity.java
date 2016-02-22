@@ -53,6 +53,7 @@ public class VideoPagerActivity extends AppCompatActivity {
         // noinspection ResourceType - setup view-pager
         mVideoPager.setAdapter(new VideoPagerAdapter(getSupportFragmentManager(), fetchVideos(),
                 getIntent().getStringExtra(EXTRA_VIDEO_TYPE)));
+        mVideoPager.setOffscreenPageLimit(3);
 //        mVideoPager.setPageTransformer(false, new ParallaxPagerTransformer(R.id.parallax_pager_container));
     }
 

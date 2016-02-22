@@ -574,6 +574,12 @@ public class DemoPlayer implements ExoPlayer.Listener, ChunkSampleSource.EventLi
     }
   }
 
+  public void pause() {
+    if (playerControl != null) {
+      playerControl.pause();
+    }
+  }
+
   private void pushSurface(boolean blockForSurfacePush) {
     if (videoRenderer == null) {
       return;
