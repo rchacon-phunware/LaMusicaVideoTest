@@ -10,7 +10,17 @@
         android:layout_height="wrap_content"
         android:layout_centerInParent="true"
         android:onClick="onClick"
-        android:text="Pager (ExoPlayer/JWPlayer)"/>
+        android:text="ExoPlayer - Pager"/>
+
+    <Button
+        android:id="@+id/button3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:layout_marginTop="15dp"
+        android:layout_below="@id/button2"
+        android:onClick="onClick"
+        android:text="JW Player - Pager"/>
 
     <Button
         android:id="@+id/button1"

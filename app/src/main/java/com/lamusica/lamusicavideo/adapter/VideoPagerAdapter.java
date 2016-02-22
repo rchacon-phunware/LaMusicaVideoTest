@@ -6,6 +6,7 @@ import android.support.v4.app.FragmentStatePagerAdapter;
 
 import com.lamusica.lamusicavideo.activity.VideoPagerActivity;
 import com.lamusica.lamusicavideo.fragment.ExoVideoFragment;
+import com.lamusica.lamusicavideo.fragment.JwVideoFragment;
 import com.lamusica.lamusicavideo.model.Video;
 
 import java.util.List;
@@ -31,7 +32,13 @@ public class VideoPagerAdapter extends FragmentStatePagerAdapter {
         if (mVideoType.equals(VideoPagerActivity.VIDEO_TYPE_EXO)) {
             return ExoVideoFragment.newInstance(mVideos.get(position));
         } else {
-            return ExoVideoFragment.newInstance(mVideos.get(position));
+            final Video video = mVideos.get(position);
+
+            if (position == 11) {
+                video.showAd = true;
+            }
+
+            return JwVideoFragment.newInstance(mVideos.get(position));
         }
     }
 

@@ -27,6 +27,9 @@ public class MainActivity extends AppCompatActivity {
             case R.id.button2:
                 VideoPagerActivity.launch(this, VideoPagerActivity.VIDEO_TYPE_EXO);
                 break;
+            case R.id.button3:
+                VideoPagerActivity.launch(this, VideoPagerActivity.VIDEO_TYPE_JW);
+                break;
         }
     }
 }

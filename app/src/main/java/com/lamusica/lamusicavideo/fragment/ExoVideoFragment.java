@@ -129,7 +129,7 @@ public class ExoVideoFragment extends Fragment implements SurfaceHolder.Callback
         final View root = inflater.inflate(R.layout.fragment_video, container, false);
 
         mVideo = getArguments().getParcelable(ARG_VIDEO);
-
+        Log.d("PlayerType", "ExoPlayer");
 
 
 //        Intent intent = getIntent();

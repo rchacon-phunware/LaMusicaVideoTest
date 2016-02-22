@@ -11,6 +11,8 @@ public class Video implements Parcelable {
     public String name;
     public String url;
 
+    public boolean showAd;
+
     @Override
     public int describeContents() {
         return 0;
@@ -20,6 +22,7 @@ public class Video implements Parcelable {
     public void writeToParcel(Parcel dest, int flags) {
         dest.writeString(this.name);
         dest.writeString(this.url);
+        dest.writeByte(showAd ? (byte) 1 : (byte) 0);
     }
 
     public Video() {
@@ -28,9 +31,10 @@ public class Video implements Parcelable {
     protected Video(Parcel in) {
         this.name = in.readString();
         this.url = in.readString();
+        this.showAd = in.readByte() != 0;
     }
 
-    public static final Parcelable.Creator<Video> CREATOR = new Parcelable.Creator<Video>() {
+    public static final Creator<Video> CREATOR = new Creator<Video>() {
         public Video createFromParcel(Parcel source) {
             return new Video(source);
         }

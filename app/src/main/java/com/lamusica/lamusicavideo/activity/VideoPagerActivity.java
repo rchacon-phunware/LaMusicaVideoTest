@@ -5,13 +5,15 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.annotation.StringDef;
+import android.support.v4.app.Fragment;
 import android.support.v4.view.ViewPager;
 import android.support.v7.app.AppCompatActivity;
+import android.view.KeyEvent;
 
-import com.lamusica.lamusicavideo.ParallaxPagerTransformer;
 import com.lamusica.lamusicavideo.R;
 import com.lamusica.lamusicavideo.TestData;
 import com.lamusica.lamusicavideo.adapter.VideoPagerAdapter;
+import com.lamusica.lamusicavideo.fragment.JwVideoFragment;
 import com.lamusica.lamusicavideo.model.Video;
 
 import java.lang.annotation.Retention;
@@ -51,7 +53,20 @@ public class VideoPagerActivity extends AppCompatActivity {
         // noinspection ResourceType - setup view-pager
         mVideoPager.setAdapter(new VideoPagerAdapter(getSupportFragmentManager(), fetchVideos(),
                 getIntent().getStringExtra(EXTRA_VIDEO_TYPE)));
-        mVideoPager.setPageTransformer(false, new ParallaxPagerTransformer(R.id.parallax_pager_container));
+//        mVideoPager.setPageTransformer(false, new ParallaxPagerTransformer(R.id.parallax_pager_container));
+    }
+
+    @Override
+    public boolean onKeyDown(int keyCode, KeyEvent event) {
+        Fragment page = getSupportFragmentManager().findFragmentByTag("android:switcher:"
+                + R.id.videoPager + ":" + mVideoPager.getCurrentItem());
+        // based on the current position you can then cast the page to the correct
+        // class and call the method:
+        if (page instanceof JwVideoFragment) {
+            return ((JwVideoFragment) page).onKeyDown(keyCode, event);
+        }
+
+        return super.onKeyDown(keyCode, event);
     }
 
     /**
