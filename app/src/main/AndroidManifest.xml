@@ -23,7 +23,7 @@
 
         <meta-data
             android:name="JW_LICENSE_KEY"
-            android:value="0nWKw1SYKf7V5N1DzHoK+CjeuggrkOywuyKbRzPzsGKwA8ZY0rqMXVbZQjA=" />
+            android:value="EnoC9Tndgee1/ZRjpzKBjLS61/Oi1kosk3Pdtw=="/>
 
         <activity
             android:name=".TabActivity"
@@ -45,6 +45,8 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+
+        <meta-data android:name="com.google.android.gms.version" android:value="@integer/google_play_services_version" />
     </application>
 
 </manifest>

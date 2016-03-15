@@ -40,6 +40,7 @@ dependencies {
     compile 'com.android.support:appcompat-v7:23.1.1'
     compile 'com.android.support:design:23.1.1'
 //    compile 'com.google.android.exoplayer:exoplayer:r1.5.0'
+    compile 'com.google.android.gms:play-services:6.1.11'
     compile 'com.android.support:support-v4:23.1.1'
     compile project(':jwplayer-android-sdk-2.0.135')
 }
